@@ -8,7 +8,10 @@ public class FoodItems
 	public String foodItem;
 	public String foodCode;
 	public int foodQuantity;
-	public float foodPrice;
+	public int foodPrice;
+	
+	public static int counter = 0;
+	public static int basketNumberSetter = 1; 
 	
 	public static FoodItems itemPizza = new FoodItems();
 
@@ -20,7 +23,7 @@ public class FoodItems
 	public static FoodItems itemIceCream = new FoodItems();
 	public static FoodItems itemChocolate = new FoodItems();
 	
-	
+	//CANT GET BASKET CODE TO BE IN ORDER
 	
 	public static void main(String[] args) 
 	{
@@ -91,23 +94,31 @@ public class FoodItems
 	
 	public static void printMenu()
 	{
+		System.out.println("---------- MENU ----------");
 		for(int i = 0; i < menu.size(); i ++)
 		{
-			System.out.print(menu.get(i).foodCode + "\t" + menu.get(i).foodItem + "\t" + menu.get(i).foodPrice + "\t" + menu.get(i).foodQuantity);
+			
+			System.out.print(menu.get(i).foodCode + "\t" + menu.get(i).foodItem + "\t" + " £" + menu.get(i).foodPrice + "\t" + menu.get(i).foodQuantity);
 			System.out.println();
 		}
+		System.out.println();
 	}
 	
-	public static void selectItem(int choice, ArrayList list)
+	
+	public static void selectItem(int choice, ArrayList<FoodItems> list)
 	{
+		
 		for(int i = 0; i < menu.size(); i++)
 		{
 			int menuCode = Integer.parseInt(menu.get(i).foodCode);
 			
 			if(menuCode == choice)
 			{
+				menu.get(i).foodQuantity--;
 				list.add(menu.get(i));
-				System.out.println(menuCode + "Has been selected");
+				basketNumberSetter++;
+				counter++;
+				System.out.println(menu.get(i).foodItem + " has been added to basket");
 				return;
 			}
 		}
