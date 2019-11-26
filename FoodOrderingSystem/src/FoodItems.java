@@ -8,6 +8,7 @@ public class FoodItems
 	public String foodItem;
 	public String foodCode;
 	public int foodQuantity;
+	public int basketQuantity;
 	public int foodPrice;
 	public static int counter = 0;
 	public static StringBuilder stringBuilder = new StringBuilder();
@@ -129,9 +130,9 @@ public class FoodItems
 			{
 				//Once the loop finds the element with the matching food code 
 				
-				menu.get(i).foodQuantity--;									//the quantity of that food is decreased
+				menu.get(i).foodQuantity -= quantity;									//the quantity of that food is decreased
 				list.add(menu.get(i));										//that object is added to the basket array list
-				list.get(counter).foodQuantity = quantity;					//set the quantity of that object to what the customer requested
+				list.get(counter).basketQuantity = quantity;					//set the quantity of that object to what the customer requested
 				counter++;													//increase the index variable for the basket  
 				System.out.println("Counter: " + counter);
 				System.out.println("List size: " + list.size());

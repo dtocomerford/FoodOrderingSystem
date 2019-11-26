@@ -126,8 +126,8 @@ public class MenuInterface
 		for(int i =0; i < basket.size(); i++)
 		{
 			//a local variable which tracks the total cost of all the items in the basket
-			total += basket.get(i).foodPrice * basket.get(i).foodQuantity;
-			System.out.println(basket.get(i).foodCode + "\t" + FoodItems.spaceSetter(basket.get(i).foodItem) + "\t£" + basket.get(i).foodPrice + "\t Qty: " + basket.get(i).foodQuantity);
+			total += basket.get(i).foodPrice * basket.get(i).basketQuantity;
+			System.out.println(basket.get(i).foodCode + "\t" + basket.get(i).foodItem + FoodItems.spaceSetter(basket.get(i).foodItem) + "\t£" + basket.get(i).foodPrice + "\t Qty: " + basket.get(i).basketQuantity);
 		}
 		System.out.println("---------- Total £ " + total + " ----------");
 		System.out.println();
