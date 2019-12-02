@@ -9,6 +9,7 @@ class CheckoutTest {
 	int total;
 	
 	
+	//Test one
 	@Test
 	void testOne() 
 	{
@@ -38,7 +39,7 @@ class CheckoutTest {
 			
 	}
 	
-	
+	//Test two
 	@Test
 	void testTwo()
 	{
