@@ -70,7 +70,7 @@ public class MenuInterface
 				checkOut = input.next().toUpperCase();
 				if(checkOut.contentEquals("Y"))
 				{
-					checkOut(false, (Integer)null);
+					checkOut(false,0);
 				}
 				break;
 			case 4:
@@ -107,9 +107,9 @@ public class MenuInterface
 				}
 				else 
 				{
-					//if the quantity is less than wahts in the basket then we just remove that amount
+					//if the quantity is less than whats in the basket then we just remove that amount
 					System.out.println(deleteQty + " item removed");
-					basket.get(i).foodQuantity -= deleteQty;
+					basket.get(i).basketQuantity -= deleteQty;
 				}
 			}
 		}
@@ -149,7 +149,8 @@ public class MenuInterface
 			//Calculating the total price of the basket
 			for(int i = 0; i < basket.size(); i++)
 			{
-				total += basket.get(i).foodPrice * basket.get(i).foodQuantity;
+				System.out.println(total);
+				total += basket.get(i).foodPrice * basket.get(i).basketQuantity;
 			}
 			
 			System.out.println("Your final bill is £" + total + "\n");
